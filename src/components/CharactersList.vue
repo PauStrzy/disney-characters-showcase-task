@@ -1,5 +1,12 @@
 <template>
 	<div>
+		<h2>Disney Characters</h2>
+		<ul class="character-headers">
+			<li class="character-header picture">Picture</li>
+			<li class="character-header name">Name</li>
+			<li class="character-header count">Films count</li>
+			<li class="character-header">Favorites</li>
+		</ul>
 		<ul>
 			<character-item
 				v-for="character in characters"
@@ -14,58 +21,48 @@
 import CharacterItem from './CharacterItem.vue'
 
 export default {
-	// props: ['characters'],
 	components: {
 		CharacterItem,
 	},
-	data() {
-		return { characters: [] }
-	},
-	mounted() {
-		this.fetchCharacters()
-	},
+	props: ['characters'],
 	methods: {
-		// toggleFavorite(character) {},
-		async fetchCharacters() {
-			try {
-				const response = await fetch('https://api.disneyapi.dev/character')
-				const data = await response.json()
-				console.log(data)
-				this.characters = data.data.filter((character) => character.films.length > 0)
-			} catch (error) {
-				console.log('Error:', error)
-			}
+		toggleFavorite(character) {
+			this.$emit('toggleFavorite', character)
 		},
 	},
 }
 </script>
 <style scoped>
-ul {
-	list-style: none;
-	padding: 0;
+h2 {
+	text-align: left;
+	margin-left: 10px;
 }
 
 li {
-	display: flex;
-	align-items: center;
 	margin: 10px;
 }
-
-img {
-	width: 50px;
-	height: 50px;
-	object-fit: cover;
-	border-radius: 50%;
-	margin-right: 10px;
+.character-headers {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #ccc;
+	padding: 0;
+	margin-bottom: 10px;
 }
-
-.star-icon {
-	cursor: pointer;
-}
-
-.tv-icon {
+.character-header {
+	flex: 1;
 	font-weight: bold;
-	margin-left: 5px;
-	color: #4400ff;
+	text-align: center;
+}
+
+.character-headers .name {
+	flex: 2;
+}
+@media (max-width: 1200px) {
+	li {
+		margin: 5px;
+	}
+	.character-headers {
+		font-size: 13px;
+	}
 }
 </style>
