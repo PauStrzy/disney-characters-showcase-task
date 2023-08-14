@@ -51,7 +51,6 @@ export default {
 			try {
 				const response = await fetch('https://api.disneyapi.dev/character')
 				const data = await response.json()
-				console.log(data)
 				this.characters = data.data.filter((character) => character.films.length > 0)
 				this.filteredCharacters = this.characters
 				this.favoriteCharacters = this.characters.filter((character) => character.isFavorite)
