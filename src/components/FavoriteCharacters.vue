@@ -1,7 +1,7 @@
 <template>
 	<div class="favorite-section">
 		<span class="star">★</span>
-		<h2 class="header">My Favorites</h2>
+		<h3 class="header">My Favorites</h3>
 
 		<ul class="character-headers">
 			<li class="name">Name</li>
@@ -49,7 +49,7 @@ export default {
 	color: goldenrod;
 }
 
-h2 {
+h3 {
 	margin-left: 20px;
 }
 

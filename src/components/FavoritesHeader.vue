@@ -2,7 +2,7 @@
 	<div>
 		<header>
 			<h1>Disney</h1>
-			<p @click="toggleView" class="my-favorites-link">{{ onHomePage ? 'Link to My Favorites' : 'Back Home' }}</p>
+			<h4 @click="toggleView" class="my-favorites-link">{{ onHomePage ? 'Link to My Favorites' : 'Back Home' }}</h4>
 		</header>
 		<div class="color-break"></div>
 	</div>
@@ -38,7 +38,6 @@ h1 {
 
 .my-favorites-link {
 	font-size: 20px;
-	color: rgb(60, 60, 60);
 	border-bottom: 1px solid;
 	cursor: pointer;
 }

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2>Disney Characters</h2>
+		<h3>Disney Characters</h3>
 		<ul class="character-headers">
 			<li class="character-header picture">Picture</li>
 			<li class="character-header name">Name</li>
@@ -33,7 +33,7 @@ export default {
 }
 </script>
 <style scoped>
-h2 {
+h3 {
 	text-align: left;
 	margin-left: 10px;
 }
