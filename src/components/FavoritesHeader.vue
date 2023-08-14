@@ -15,7 +15,7 @@ export default {
 	methods: {
 		toggleView() {
 			if (this.onHomePage) {
-				this.$router.push('/favorites') // Update the route path to '/favorites'
+				this.$router.push('/favorites')
 			} else {
 				this.$router.push('/')
 			}
